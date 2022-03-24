@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>form based project</title>
+    <link rel="stylesheet" href="{% static "css/feedback.css" %}">
+  </head>
+  <body>
+
+    {% if submitted %}
+        <h1>student with name {{name}} submitted the feebback TQ</h1>
+    {% else %}
+         <h2>STUDENT FEEDBACK FORM</h2>
+    {% endif %}
+    <form  method="post">
+      {{form.as_p}}
+      {% csrf_token %}
+      <input type="submit" name="s1" value="SUBMIT">
+
+    </form>
+
+  </body>
+</html>
